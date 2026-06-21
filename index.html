@@ -157,7 +157,7 @@
     .metric-lbl { font-size: 11px; color: var(--muted); font-weight: 500; margin-bottom: 6px; letter-spacing: 0.05em; text-transform: uppercase; }
     .metric-val { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: var(--white); }
     .metric-up { font-size: 11px; color: #34D399; font-weight: 600; margin-top: 2px; }
-    .spark { margin-top: 14px; display: flex; align-items: flex-end; gap: 4px; height: 48px; }
+    .spark { display: flex; align-items: flex-end; gap: 4px; height: 56px; }
     .spark-bar {
       flex: 1; border-radius: 4px 4px 0 0;
       background: rgba(124,58,237,0.25);
@@ -186,7 +186,7 @@
     }
     .section-sub { font-size: 16px; color: var(--muted); max-width: 440px; line-height: 1.7; margin-bottom: 60px; }
  
-    /* WHY US — icon row */
+    /* WHY */
     .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .why-card {
       background: var(--surface); border: 1px solid var(--border);
@@ -211,19 +211,15 @@
     .why-name { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 10px; }
     .why-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
  
-    /* SERVICES — two-col layout */
-    .services-split {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 60px; align-items: start;
-    }
+    /* SERVICES */
+    .services-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
     .services-left { position: sticky; top: 120px; }
-    .service-list { display: flex; flex-direction: column; gap: 16px; margin-top: 0; }
+    .service-list { display: flex; flex-direction: column; gap: 16px; }
     .service-item {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 14px; padding: 24px 28px;
       display: flex; gap: 20px; align-items: flex-start;
       transition: border-color .25s, transform .2s;
-      cursor: default;
     }
     .service-item:hover { border-color: rgba(124,58,237,0.4); transform: translateX(4px); }
     .svc-icon {
@@ -301,42 +297,48 @@
     .testi-name { font-weight: 600; font-size: 14px; }
     .testi-role { font-size: 12px; color: var(--muted); }
  
-    /* PRICING */
+    /* PRICING — tek kart ortada */
     .pricing { padding: 100px 48px; }
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 60px; }
+    .pricing-center { display: flex; justify-content: center; margin-top: 60px; }
     .price-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 20px; padding: 36px;
-      transition: transform .25s; display: flex; flex-direction: column;
-    }
-    .price-card:hover { transform: translateY(-4px); }
-    .price-card.featured {
       background: linear-gradient(160deg, rgba(124,58,237,0.22), rgba(124,58,237,0.06));
-      border-color: rgba(124,58,237,0.5);
-      box-shadow: 0 0 60px rgba(124,58,237,0.15);
+      border: 1px solid rgba(124,58,237,0.5);
+      border-radius: 20px; padding: 48px 52px;
+      box-shadow: 0 0 80px rgba(124,58,237,0.15);
+      max-width: 520px; width: 100%;
+      position: relative; overflow: hidden;
+    }
+    .price-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--purple), var(--lavender), transparent);
     }
     .price-badge {
       display: inline-block; background: var(--purple); color: #fff;
       font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-      padding: 4px 12px; border-radius: 100px; margin-bottom: 20px; align-self: flex-start;
+      padding: 4px 12px; border-radius: 100px; margin-bottom: 24px;
     }
-    .price-name { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; margin-bottom: 8px; }
-    .price-sub { font-size: 13px; color: var(--muted); margin-bottom: 28px; line-height: 1.5; }
-    .price-amount { font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
-    .price-period { font-size: 13px; color: var(--muted); margin-bottom: 32px; }
-    .price-divider { height: 1px; background: var(--border); margin-bottom: 28px; }
-    .price-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; flex: 1; }
-    .price-features li { font-size: 14px; color: var(--muted); display: flex; align-items: flex-start; gap: 10px; }
-    .price-features li::before { content: '✓'; color: var(--lavender); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
-    .price-btn {
-      display: block; text-align: center; padding: 13px;
-      border-radius: 10px; font-weight: 600; font-size: 14px;
-      text-decoration: none; transition: all .2s; cursor: pointer;
+    .price-name { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+    .price-sub { font-size: 14px; color: var(--muted); margin-bottom: 32px; line-height: 1.6; }
+    .price-amount {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 56px; font-weight: 700; color: var(--white);
+      margin-bottom: 4px; letter-spacing: -2px;
     }
-    .price-btn-outline { border: 1px solid var(--border); color: var(--white); }
-    .price-btn-outline:hover { border-color: var(--purple); color: var(--lavender); }
-    .price-btn-fill { background: var(--purple); color: #fff; box-shadow: 0 4px 24px rgba(124,58,237,0.4); }
-    .price-btn-fill:hover { background: var(--purple-lt); }
+    .price-period { font-size: 14px; color: var(--muted); margin-bottom: 36px; }
+    .price-divider { height: 1px; background: var(--border); margin-bottom: 32px; }
+    .price-features { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 40px; }
+    .price-features li { font-size: 15px; color: var(--muted); display: flex; align-items: flex-start; gap: 12px; }
+    .price-features li::before { content: '✓'; color: var(--lavender); font-weight: 700; flex-shrink: 0; margin-top: 2px; font-size: 14px; }
+    .price-btn-fill {
+      display: block; text-align: center; padding: 16px;
+      border-radius: 10px; font-weight: 600; font-size: 16px;
+      text-decoration: none; background: var(--purple); color: #fff;
+      box-shadow: 0 4px 32px rgba(124,58,237,0.5);
+      transition: all .2s; cursor: pointer; border: none;
+      font-family: 'Inter', sans-serif; width: 100%;
+    }
+    .price-btn-fill:hover { background: var(--purple-lt); transform: translateY(-1px); }
  
     /* FAQ */
     .faq-section { padding: 100px 48px; }
@@ -417,7 +419,7 @@
       .hero::after { display: none; }
       .section, .process-section, .testimonials, .pricing, .faq-section { padding: 70px 24px; }
       .logos-section { padding: 40px 24px; }
-      .why-grid, .results-grid, .pricing-grid { grid-template-columns: 1fr; }
+      .why-grid, .results-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .services-split { grid-template-columns: 1fr; gap: 40px; }
       .services-left { position: static; }
@@ -425,6 +427,7 @@
       .process-steps::before { display: none; }
       .cta-section { margin: 0 24px 60px; padding: 50px 28px; }
       footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+      .price-card { padding: 36px 28px; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition-duration: 0ms !important; }
@@ -438,13 +441,13 @@
 <nav>
   <a href="#" class="logo">
     <span class="logo-dot"></span>
-    Pulse Social
+    Rovexa
   </a>
   <ul class="nav-links">
     <li><a href="#why">Neden Biz</a></li>
     <li><a href="#services">Hizmetler</a></li>
     <li><a href="#results">Sonuçlar</a></li>
-    <li><a href="#pricing">Fiyatlar</a></li>
+    <li><a href="#pricing">Fiyat</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Ücretsiz Analiz Al</a>
 </nav>
@@ -476,7 +479,7 @@
       </div>
       <div>
         <div class="stat-num" id="cnt2">0</div>
-        <div class="stat-label">Sektör Deneyimi</div>
+        <div class="stat-label">Yıllık Deneyim</div>
       </div>
       <div>
         <div class="stat-num" id="cnt3">0</div>
@@ -498,7 +501,7 @@
         <div class="metric-up">↑ Bu ay</div>
       </div>
       <div class="metric-card">
-        <div class="metric-lbl">Sayfa Etkileşimi</div>
+        <div class="metric-lbl">Etkileşim</div>
         <div class="metric-val">7.2%</div>
         <div class="metric-up">↑ Sektör ort. 2x</div>
       </div>
@@ -522,32 +525,6 @@
       <div class="spark-bar" style="height:72%"></div>
       <div class="spark-bar active" style="height:100%"></div>
     </div>
-    <div class="dash-platforms">
-      <div class="platform-row">
-        <div class="platform-icon ig">📷</div>
-        <span class="platform-name">Instagram</span>
-        <div class="platform-bar-wrap"><div class="platform-bar" style="width:85%"></div></div>
-        <span class="platform-pct">85%</span>
-      </div>
-      <div class="platform-row">
-        <div class="platform-icon tt">🎵</div>
-        <span class="platform-name">TikTok</span>
-        <div class="platform-bar-wrap"><div class="platform-bar" style="width:64%"></div></div>
-        <span class="platform-pct">64%</span>
-      </div>
-      <div class="platform-row">
-        <div class="platform-icon li">💼</div>
-        <span class="platform-name">LinkedIn</span>
-        <div class="platform-bar-wrap"><div class="platform-bar" style="width:48%"></div></div>
-        <span class="platform-pct">48%</span>
-      </div>
-      <div class="platform-row">
-        <div class="platform-icon tw">𝕏</div>
-        <span class="platform-name">X / Twitter</span>
-        <div class="platform-bar-wrap"><div class="platform-bar" style="width:32%"></div></div>
-        <span class="platform-pct">32%</span>
-      </div>
-    </div>
   </div>
 </section>
  
@@ -564,10 +541,10 @@
   </div>
 </div>
  
-<!-- WHY US -->
+<!-- WHY -->
 <section class="section" id="why">
   <div class="fade-up">
-    <p class="section-eyebrow">// Neden Pulse Social</p>
+    <p class="section-eyebrow">// Neden Rovexa</p>
     <h2 class="section-title">İşletmenizin Sosyal Medyası Sıradan Bir Ajansı Hak Etmiyor</h2>
     <p class="section-sub">Büyük ajanslar büyük markalara odaklanır. Biz küçük ve orta ölçekli işletmelerin dilini konuşuyoruz.</p>
   </div>
@@ -580,7 +557,7 @@
     <div class="why-card fade-up">
       <div class="why-icon">📞</div>
       <div class="why-name">Tek Tıkla Ulaşabilirsiniz</div>
-      <p class="why-desc">Büyük ajansların aksine, her müşterimize özel bir hesap yöneticisi atıyoruz. Sorularınız karşılıksız kalmaz, WhatsApp'tan bile ulaşabilirsiniz.</p>
+      <p class="why-desc">Her müşterimize özel bir hesap yöneticisi atıyoruz. Sorularınız karşılıksız kalmaz, WhatsApp'tan bile ulaşabilirsiniz.</p>
     </div>
     <div class="why-card fade-up">
       <div class="why-icon">📊</div>
@@ -612,7 +589,7 @@
       <p class="section-eyebrow">// Hizmetlerimiz</p>
       <h2 class="section-title">İşletmenizin İhtiyaç Duyduğu Her Şey</h2>
       <p class="section-sub">Sosyal medya yönetiminden reklama, içerik üretiminden müşteri etkileşimine — tüm süreçleri sizin adınıza yönetiyoruz.</p>
-      <a href="#pricing" class="btn-primary" style="display:inline-block;margin-top:8px">Paketleri Gör →</a>
+      <a href="#pricing" class="btn-primary" style="display:inline-block;margin-top:8px">Paketi İncele →</a>
     </div>
     <div class="service-list">
       <div class="service-item fade-up">
@@ -720,7 +697,7 @@
   <div class="testimonials-grid">
     <div class="testi-card fade-up">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Sosyal medyayla hiç ilgilenecek vaktim yoktu. Pulse Social devralınca hem rahatlıyor hem de hesaplarımın gerçekten büyüdüğünü görüyorum. Telefonuma düşen mesajlar ikiye katlandı."</p>
+      <p class="testi-text">"Sosyal medyayla hiç ilgilenecek vaktim yoktu. Rovexa devralınca hem rahatlıyor hem de hesaplarımın gerçekten büyüdüğünü görüyorum. Telefonuma düşen mesajlar ikiye katlandı."</p>
       <div class="testi-author">
         <div class="testi-avatar av1">FD</div>
         <div>
@@ -742,7 +719,7 @@
     </div>
     <div class="testi-card fade-up">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Hukuk bürosu için sosyal medya nasıl çalışır diye düşünürdüm. Şimdi LinkedIn'den ciddi kurumsal müşteriler geliyor. Profesyonellik açısından markamız çok güçlendi."</p>
+      <p class="testi-text">"Hukuk bürosu için sosyal medya nasıl çalışır diye düşünürdüm. Şimdi LinkedIn'den ciddi kurumsal müşteriler geliyor. Markamız çok güçlendi."</p>
       <div class="testi-author">
         <div class="testi-avatar av3">NA</div>
         <div>
@@ -753,7 +730,7 @@
     </div>
     <div class="testi-card fade-up">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Mobilya mağazamız için Instagram ve TikTok içerikleri yapıyorlar. Showroom'a gelen müşterilerin yarısından fazlası artık sosyal medyadan geliyor. Çok somut fark var."</p>
+      <p class="testi-text">"Showroom'a gelen müşterilerin yarısından fazlası artık sosyal medyadan geliyor. Çok somut bir fark var, sayılar konuşuyor."</p>
       <div class="testi-author">
         <div class="testi-avatar av4">EÖ</div>
         <div>
@@ -767,61 +744,31 @@
  
 <!-- PRICING -->
 <section class="pricing" id="pricing">
-  <div class="fade-up">
+  <div class="fade-up" style="text-align:center">
     <p class="section-eyebrow">// Fiyatlandırma</p>
-    <h2 class="section-title">İşletmenizin Büyüklüğüne Göre Paket</h2>
-    <p class="section-sub">Gizli ücret yok. Uzun vadeli sözleşme zorunluluğu yok. Sonuç görünce zaten kalmak isteyeceksiniz.</p>
+    <h2 class="section-title" style="max-width:100%;text-align:center">Tek Paket, Net Fiyat</h2>
+    <p class="section-sub" style="max-width:500px;margin-left:auto;margin-right:auto;text-align:center">Gizli ücret yok, karmaşık paket seçenekleri yok. Her şey dahil, tek fiyat.</p>
   </div>
-  <div class="pricing-grid">
+  <div class="pricing-center">
     <div class="price-card fade-up">
-      <div class="price-name">Başlangıç</div>
-      <p class="price-sub">Sosyal medyaya yeni adım atan veya düzene sokmak isteyen işletmeler için.</p>
-      <div class="price-amount">₺7.900</div>
+      <span class="price-badge">Tam Kapsamlı Paket</span>
+      <div class="price-name">Sosyal Medya Yönetimi</div>
+      <p class="price-sub">Küçük ve orta ölçekli işletmeler için ihtiyaç duyulan her şey tek pakette. Strateji, içerik, reklam ve raporlama.</p>
+      <div class="price-amount">₺25.000</div>
       <p class="price-period">/ aylık + KDV</p>
       <div class="price-divider"></div>
       <ul class="price-features">
-        <li>2 platform (Instagram + Facebook)</li>
-        <li>Ayda 20 içerik & story</li>
-        <li>Yorum & mesaj yönetimi</li>
-        <li>Aylık performans raporu</li>
-        <li>Dedicated hesap yöneticisi</li>
-      </ul>
-      <a href="#contact" class="price-btn price-btn-outline">Başvur</a>
-    </div>
-    <div class="price-card featured fade-up">
-      <span class="price-badge">En Popüler</span>
-      <div class="price-name">Büyüme</div>
-      <p class="price-sub">Müşteri kazanımını hızlandırmak ve reklam yatırımı yapmak isteyen işletmeler için.</p>
-      <div class="price-amount">₺18.900</div>
-      <p class="price-period">/ aylık + KDV</p>
-      <div class="price-divider"></div>
-      <ul class="price-features">
-        <li>3 platform + TikTok</li>
-        <li>Ayda 36 içerik + 6 Reels/video</li>
+        <li>4 platform yönetimi (Instagram, Facebook, TikTok, LinkedIn)</li>
+        <li>Ayda 40 içerik + 8 Reels/kısa video</li>
         <li>Meta reklam yönetimi (bütçe hariç)</li>
-        <li>Yerel hedefleme & A/B testleri</li>
+        <li>Yorum & mesaj yönetimi (7 gün)</li>
+        <li>Yerel hedefleme & A/B reklam testleri</li>
         <li>Haftalık performans özeti</li>
         <li>Aylık strateji toplantısı</li>
-        <li>Öncelikli destek (WhatsApp)</li>
+        <li>Dedicated hesap yöneticisi</li>
+        <li>WhatsApp öncelikli destek</li>
       </ul>
-      <a href="#contact" class="price-btn price-btn-fill">Başvur</a>
-    </div>
-    <div class="price-card fade-up">
-      <div class="price-name">Kurumsal</div>
-      <p class="price-sub">Birden fazla şubesi olan veya yoğun dijital baskı gerektiren işletmeler için özel teklif.</p>
-      <div class="price-amount">Özel</div>
-      <p class="price-period">teklif alın</p>
-      <div class="price-divider"></div>
-      <ul class="price-features">
-        <li>Tüm platformlar</li>
-        <li>Sınırsız içerik üretimi</li>
-        <li>Video prodüksiyon & çekim</li>
-        <li>Çok şubeli yönetim</li>
-        <li>Influencer kampanya yönetimi</li>
-        <li>Rakip & pazar analizi</li>
-        <li>7/24 öncelikli destek</li>
-      </ul>
-      <a href="#contact" class="price-btn price-btn-outline">Teklif Al</a>
+      <a href="#contact" class="price-btn-fill">Hemen Başvur →</a>
     </div>
   </div>
 </section>
@@ -838,35 +785,35 @@
         Sosyal medya hesaplarıma erişim vermeliyim mi?
         <span class="faq-arrow">+</span>
       </button>
-      <div class="faq-a">Evet, ancak şifrelerinizi paylaşmanıza gerek yok. Meta Business Suite üzerinden güvenli erişim yetkisi veriyorsunuz. İstediğiniz zaman bu yetkiyi iptal edebilirsiniz. Hesap güvenliğiniz her zaman sizin kontrolünüzde.</div>
+      <div class="faq-a">Evet, ancak şifrelerinizi paylaşmanıza gerek yok. Meta Business Suite üzerinden güvenli erişim yetkisi veriyorsunuz. İstediğiniz zaman bu yetkiyi iptal edebilirsiniz.</div>
     </div>
     <div class="faq-item fade-up">
       <button class="faq-q" onclick="toggleFaq(this)">
         İçerikleri onaylamak zorunda mıyım?
         <span class="faq-arrow">+</span>
       </button>
-      <div class="faq-a">Tercihlerinize göre şekillendiriyoruz. Bazı müşterilerimiz her içeriği önceden onaylamak isterken, bazıları tamamen bize bırakıyor. İkisi de mümkün. İlk aylarda onay süreciyle başlayıp güven oluştukça tam yönetime geçebilirsiniz.</div>
+      <div class="faq-a">Tercihlerinize göre şekillendiriyoruz. Bazı müşterilerimiz her içeriği önceden onaylarken, bazıları tamamen bize bırakıyor. İkisi de mümkün.</div>
     </div>
     <div class="faq-item fade-up">
       <button class="faq-q" onclick="toggleFaq(this)">
         Sözleşme süresi ne kadar?
         <span class="faq-arrow">+</span>
       </button>
-      <div class="faq-a">Minimum 3 aylık anlaşmayla başlıyoruz çünkü sosyal medyada sonuçlar 6-8 haftada görünür hale geliyor. 3 ayın ardından aylık devam eden bir sözleşmeye geçiş yapabilirsiniz. Uzun vadeli taahhüt zorunlu değil.</div>
+      <div class="faq-a">Minimum 3 aylık anlaşmayla başlıyoruz. Sosyal medyada sonuçlar 6-8 haftada görünür hale geliyor. 3 ayın ardından aylık devam eden sözleşmeye geçiş yapabilirsiniz.</div>
     </div>
     <div class="faq-item fade-up">
       <button class="faq-q" onclick="toggleFaq(this)">
         Reklam bütçesi pakete dahil mi?
         <span class="faq-arrow">+</span>
       </button>
-      <div class="faq-a">Hayır, reklam bütçesi ayrıdır ve doğrudan Meta'ya ödenir. Biz reklam yönetimi hizmetini sunuyoruz. Bu sayede bütçenizin tamamı reklamlara gider, aracı komisyonu kesilmez. Aylık ₺2.000 ile başlamanızı öneriyoruz.</div>
+      <div class="faq-a">Hayır, reklam bütçesi ayrıdır ve doğrudan Meta'ya ödenir. Biz yönetim hizmetini sunuyoruz. Bu sayede bütçenizin tamamı reklamlara gider. Aylık ₺2.000 ile başlamanızı öneriyoruz.</div>
     </div>
     <div class="faq-item fade-up">
       <button class="faq-q" onclick="toggleFaq(this)">
         Ne zaman sonuç görmeye başlarım?
         <span class="faq-arrow">+</span>
       </button>
-      <div class="faq-a">Reklam kampanyalarında ilk sonuçlar genellikle 1-2 hafta içinde görülür. Organik büyümede ise algoritmanın sayfanızı tanıması 4-8 hafta sürer. İlk raporunuzu 30. günde detaylı şekilde paylaşıyoruz.</div>
+      <div class="faq-a">Reklam kampanyalarında ilk sonuçlar 1-2 hafta içinde görülür. Organik büyümede ise 4-8 hafta sürer. İlk raporunuzu 30. günde detaylı şekilde paylaşıyoruz.</div>
     </div>
   </div>
 </section>
@@ -886,19 +833,17 @@
 <footer>
   <a href="#" class="logo">
     <span class="logo-dot"></span>
-    Pulse Social
+    Rovexa
   </a>
   <ul class="footer-links">
     <li><a href="#">Gizlilik Politikası</a></li>
     <li><a href="#">Kullanım Koşulları</a></li>
     <li><a href="#">İletişim</a></li>
-    <li><a href="#">Blog</a></li>
   </ul>
-  <p class="footer-copy">© 2026 Pulse Social. Tüm hakları saklıdır.</p>
+  <p class="footer-copy">© 2026 Rovexa. Tüm hakları saklıdır.</p>
 </footer>
  
 <script>
-  // Scroll fade-up
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
@@ -906,7 +851,6 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
  
-  // Counter
   function animCount(elId, target, duration, suffix) {
     const el = document.getElementById(elId);
     if (!el) return;
@@ -932,7 +876,6 @@
     }
   }, { threshold: 0.4 }).observe(document.querySelector('.hero'));
  
-  // FAQ accordion
   function toggleFaq(btn) {
     const item = btn.closest('.faq-item');
     const isOpen = item.classList.contains('open');
